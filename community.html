@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo"><a href="./index.html" style="color:  #4CE09E; text-decoration: none;"><img src="./flow.png" alt="flower" style="position: relative; top: 32px;">BLOOMIX</a></div>
+        <div class="text"><a href="./index.html">Go to main page</a></div>
+      </div>
+    <div class="comm-grid">
+        <!-- Лидерборд -->
+        <div class="comm-section">
+          <h3>Топ Садоводов 🏆</h3>
+          <div class="leader-item"><span>1. Алексей К.</span> <strong>2450 🪙</strong></div>
+          <div class="leader-item"><span>2. Мария П.</span> <strong>1900 🪙</strong></div>
+          <div class="leader-item me"><span>3. Ты</span> <strong>ваши монеты</strong></div>
+        </div>
+      
+        <!-- Активность -->
+        <div class="comm-section">
+          <h3>События сада 🍃</h3>
+          <div class="news-item">🌸 <b>Мария</b> посадила Сакуру</div>
+          <div class="news-item">🎓 <b>Иван</b> прошел тест по Алгебре</div>
+          <div class="news-item">💰 <b>Анна</b> получила бонус за серию дней!</div>
+        </div>
+      </div>
+      
+      <style>
+      .comm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; padding: 20px; }
+      .comm-section { background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); padding: 20px; border-radius: 25px; border: 1px solid white; }
+      .leader-item { display: flex; justify-content: space-between; padding: 12px; border-bottom: 1px solid #eef; }
+      .me { background: #4CE09E; color: white; border-radius: 12px; border-bottom: none; margin-top: 5px; }
+      .news-item { padding: 10px; font-size: 14px; border-left: 3px solid #4CE09E; margin-bottom: 10px; background: white; border-radius: 0 10px 10px 0; }
+      </style>      
+</body>
+</html>

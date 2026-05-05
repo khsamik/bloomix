@@ -1,0 +1,99 @@
+/* Общий контейнер для контента страниц */
+* {
+    font-family: "Poppins", sans-serif;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: white;
+  }
+  .logo { color: #4CE09E; font-weight: bold; font-size: 24px; }
+  .coins { background: #FFFFAB; padding: 8px 15px; border-radius: 20px; font-weight: bold; }
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.text a {
+    color: #4CE09E;
+    text-decoration: none;
+}
+
+/* СТИЛЬ КУРСОВ (Courses) */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+.course-card {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(76, 224, 158, 0.1);
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+.course-card:hover {
+    border-color: #4CE09E;
+    transform: translateY(-5px);
+}
+.progress-ring {
+    height: 6px;
+    background: #eee;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* СТИЛЬ ДОСТИЖЕНИЙ (Achievements) */
+.ach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.medal {
+    background: white;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    padding: 10px;
+}
+.medal.locked {
+    filter: grayscale(1);
+    opacity: 0.4;
+}
+.medal i { font-size: 40px; margin-bottom: 10px; }
+
+/* СТИЛЬ СООБЩЕСТВА (Community) */
+.comm-layout {
+    display: flex;
+    gap: 30px;
+}
+.leaderboard {
+    flex: 1;
+    background: white;
+    border-radius: 30px;
+    padding: 25px;
+}
+.user-row {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.user-row.me {
+    background: #f6fff9;
+    border-radius: 15px;
+    border: 1px solid #4CE09E;
+}
+.rank {
+    width: 30px;
+    font-weight: bold;
+    color: #4CE09E;
+}

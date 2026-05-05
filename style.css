@@ -25,98 +25,93 @@ img {
     --cyan: #2FE0FF;
     --lime: #B6E07A;
   }
-  .container{
-    max-width: 1562px;
-    margin: 0 auto;
-  }
-
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }:root {
+    --green: #4CE09E;
+    --dark-green: #3BCB8A;
+    --text-color: #2C3E2F;
   }
+  
   .navbar {
     background: white;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 14px 5%;
+    padding: 12px 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
   }
-
+  
+  /* Логотип */
   .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--green);
+    gap: 12px;
     text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-color);
   }
-
-  .logo-circle {
-    width: 42px;
-    height: 42px;
-    background: linear-gradient(135deg, var(--green), var(--light-green));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 22px;
+  
+  .logo img {
+    height: 40px; /* Высота логотипа */
+    width: auto;
   }
-
+  
+  /* Ссылки посередине */
   .nav-links {
     display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
+    gap: 30px;
   }
-
+  
   .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #666;
     font-weight: 500;
-    font-size: 16px;
-    transition: color 0.3s;
+    font-size: 15px;
+    transition: 0.3s;
   }
-
+  
   .nav-links a:hover {
     color: var(--green);
   }
-
+  
+  /* Правая часть */
   .nav-right {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    gap: 25px;
   }
-
-  .nav-right a {
+  
+  .login-link {
     text-decoration: none;
-    color: #555;
-    font-weight: 500;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 15px;
   }
-
+  
+  /* Кнопка Get Started */
   .btn-get-started {
-    background: linear-gradient(90deg, var(--green), var(--light-green));
-    color: white;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 16px;
+    background: var(--green);
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 14px;
     text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(76, 224, 158, 0.3);
-    transition: all 0.3s;
   }
-
+  
   .btn-get-started:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(76, 224, 158, 0.4);
+    background: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 224, 158, 0.4);
   }
 
   body {
