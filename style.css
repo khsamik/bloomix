@@ -81,6 +81,7 @@ img {
     color: var(--green);
   }
   
+  
   /* Правая часть */
   .nav-right {
     display: flex;
@@ -431,3 +432,4 @@ width: 1232px;
     .header-content { flex-direction: column; text-align: center; }
     .stats-bar { flex-direction: column; gap: 20px; border-radius: 30px; }
   }
+  
